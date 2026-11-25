@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | KIBIRA MODERN SITES</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            KIBIRA MODERN SITES
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                View Website
+            </a>
+
+            <a href="add-property.html">
+                Add Property
+            </a>
+
+            <a href="#" onclick="logout()">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
+    <section class="properties">
+
+        <h1>
+            Admin Dashboard
+        </h1>
+
+        <p style="margin:15px 0 35px;">
+            Welcome to the KIBIRA MODERN SITES management dashboard.
+        </p>
+
+
+
+        <!-- =========================
+             STATISTICS
+        ========================== -->
+
+        <div class="property-grid">
+
+
+            <!-- TOTAL PROPERTIES -->
+
+            <div class="property-card">
+
+                <div class="property-info">
+
+                    <h3>
+                        Total Properties
+                    </h3>
+
+                    <h4 id="totalProperties">
+                        3
+                    </h4>
+
+                    <p>
+                        Properties currently listed
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LAND -->
+
+            <div class="property-card">
+
+                <div class="property-info">
+
+                    <h3>
+                        Land
+                    </h3>
+
+                    <h4 id="landProperties">
+                        1
+                    </h4>
+
+                    <p>
+                        Land properties
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HOUSES -->
+
+            <div class="property-card">
+
+                <div class="property-info">
+
+                    <h3>
+                        Houses
+                    </h3>
+
+                    <h4 id="houseProperties">
+                        1
+                    </h4>
+
+                    <p>
+                        Houses listed
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COMMERCIAL -->
+
+            <div class="property-card">
+
+                <div class="property-info">
+
+                    <h3>
+                        Commercial
+                    </h3>
+
+                    <h4 id="commercialProperties">
+                        1
+                    </h4>
+
+                    <p>
+                        Commercial properties
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             PROPERTY MANAGEMENT
+        ========================== -->
+
+        <div style="
+            background:white;
+            padding:30px;
+            margin-top:40px;
+            border-radius:10px;
+        ">
+
+            <h2>
+                Property Management
+            </h2>
+
+            <p style="margin:15px 0 25px;">
+                Manage properties listed on the platform.
+            </p>
+
+
+            <table style="
+                width:100%;
+                border-collapse:collapse;
+            ">
+
+                <thead>
+
+                    <tr style="
+                        background:#111827;
+                        color:white;
+                    ">
+
+                        <th style="padding:15px;">
+                            Property
+                        </th>
+
+                        <th style="padding:15px;">
+                            Location
+                        </th>
+
+                        <th style="padding:15px;">
+                            Type
+                        </th>
+
+                        <th style="padding:15px;">
+                            Price
+                        </th>
+
+                        <th style="padding:15px;">
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <!-- PROPERTY 1 -->
+
+                    <tr>
+
+                        <td style="padding:15px;">
+                            Residential Plot
+                        </td>
+
+                        <td style="padding:15px;">
+                            Wakiso
+                        </td>
+
+                        <td style="padding:15px;">
+                            Land
+                        </td>
+
+                        <td style="padding:15px;">
+                            UGX 10,000,000
+                        </td>
+
+                        <td style="padding:15px;">
+                            Approved
+                        </td>
+
+                    </tr>
+
+
+
+                    <!-- PROPERTY 2 -->
+
+                    <tr>
+
+                        <td style="padding:15px;">
+                            Modern Family House
+                        </td>
+
+                        <td style="padding:15px;">
+                            Kampala
+                        </td>
+
+                        <td style="padding:15px;">
+                            House
+                        </td>
+
+                        <td style="padding:15px;">
+                            UGX 450,000,000
+                        </td>
+
+                        <td style="padding:15px;">
+                            Approved
+                        </td>
+
+                    </tr>
+
+
+
+                    <!-- PROPERTY 3 -->
+
+                    <tr>
+
+                        <td style="padding:15px;">
+                            Commercial Property
+                        </td>
+
+                        <td style="padding:15px;">
+                            Entebbe
+                        </td>
+
+                        <td style="padding:15px;">
+                            Commercial
+                        </td>
+
+                        <td style="padding:15px;">
+                            UGX 250,000,000
+                        </td>
+
+                        <td style="padding:15px;">
+                            Approved
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 KIBIRA MODERN SITES.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /*
+            CHECK LOGIN
+        */
+
+        const loggedIn =
+            localStorage.getItem("adminLoggedIn");
+
+
+        if (loggedIn !== "true") {
+
+            window.location.href =
+                "admin-login.html";
+
+        }
+
+
+
+        /*
+            LOGOUT
+        */
+
+        function logout() {
+
+            localStorage.removeItem(
+                "adminLoggedIn"
+            );
+
+            window.location.href =
+                "admin-login.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
